@@ -1754,7 +1754,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 3. Can you explain the flow of data from client through the backend system and back to the client?
  -First of all client sends a HTTP request to an endpoint which could be create, read, update and delete, the backend sends back a response with the JSON-formmated resource or data pulled out from the database, or simply a HTTP status response. However, a client can also send a data included in the request body or HTTP headers to be persisted in the database by making a post request.
 4. How did you handle querying in your application: custom querying vs JPA Querying?
-    -
+   I handled the custom query inside my UserRepository interface with the @Query annotation the query is written in raw SQL in a value attribute, also nativeQuery attribute is set to true indicating that the names of the columns will be declared as they are in the database. I Also used JPA query in my TodoServiceImpl to query a todo by passing a todo id as the argument in the findById method provided by the CrudRepository.
 
 ## Instructions
 
