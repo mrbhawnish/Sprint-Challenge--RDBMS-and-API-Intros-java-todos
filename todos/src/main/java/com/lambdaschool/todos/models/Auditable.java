@@ -4,6 +4,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.EntityListeners;
@@ -57,4 +58,24 @@ abstract class Auditable
     @LastModifiedDate
     @Temporal(TIMESTAMP)
     protected Date lastModifiedDate;
+
+    public String getCreatedBy()
+    {
+        return createdBy;
+    }
+
+    public Date getCreatedDate()
+    {
+        return createdDate;
+    }
+
+    public String getLastModifiedBy()
+    {
+        return lastModifiedBy;
+    }
+
+    public Date getLastModifiedDate()
+    {
+        return lastModifiedDate;
+    }
 }
